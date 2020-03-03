@@ -1,0 +1,13 @@
+
+<div id="myDIV" class="header">
+  <h2 style="margin:5px">My To Do List</h2>
+  <input #newTodo (keyup.enter)="addTodo(newTodo.value)"   newTodo.value='' type="text" id="myInput" placeholder="Title...">
+
+  <span (click)="addTodo(newTodo.value)" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL">
+  <li id="li" *ngFor="let todo of todos">{{todo.name}}
+    <span (click)="delete(todo)">x</span>
+  </li>
+</ul>
